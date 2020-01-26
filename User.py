@@ -27,3 +27,16 @@ if a.login('pass_no'):
     print('成功')
 else:
     print('失敗')
+
+
+class GuestUser(User):
+    def __init__(self):
+        super().__init__('guest', 'guest')
+
+
+b = GuestUser()
+
+if b.login('guest'):
+    print('成功')
+else:
+    print('失敗')
