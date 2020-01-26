@@ -1,14 +1,14 @@
 class User:
     def __init__(self, name, password):
         self.name = name
-        self.password = password
+        self.__password = password
 
     @staticmethod
     def logout():
         print('logout')
 
     def login(self, password):
-        if self.password == password:
+        if self.__password == password:
             return True
         else:
             return False
