@@ -18,22 +18,22 @@ pos = [
 ]
 
 while len(pos) > 0:
-    x, y, depth = pos.pop(0)
+    vertical_i, horizontal_i, depth = pos.pop(0)
 
-    if maze[x][y] == 1:
+    if maze[vertical_i][horizontal_i] == 1:
         print(depth)
         break
 
-    maze[x][y] = 2
+    maze[vertical_i][horizontal_i] = 2
 
-    if maze[x - 1][y] < 2:
-        pos.append([x - 1, y, depth + 1])
-    if maze[x + 1][y] < 2:
-        pos.append([x + 1, y, depth + 1])
-    if maze[x][y - 1] < 2:
-        pos.append([x, y - 1, depth + 1])
-    if maze[x][y + 1] < 2:
-        pos.append([x, y + 1, depth + 1])
+    if maze[vertical_i - 1][horizontal_i] < 2:
+        pos.append([vertical_i - 1, horizontal_i, depth + 1])
+    if maze[vertical_i + 1][horizontal_i] < 2:
+        pos.append([vertical_i + 1, horizontal_i, depth + 1])
+    if maze[vertical_i][horizontal_i - 1] < 2:
+        pos.append([vertical_i, horizontal_i - 1, depth + 1])
+    if maze[vertical_i][horizontal_i + 1] < 2:
+        pos.append([vertical_i, horizontal_i + 1, depth + 1])
 
     print('pos')
     print(pos)
