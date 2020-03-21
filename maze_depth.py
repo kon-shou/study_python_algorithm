@@ -13,12 +13,18 @@ maze = [
     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 ]
 
+count = 0
+
 
 def search(vertical_i, horizontal_i, depth):
+    global count
+    count += 1
+
     if maze[vertical_i][horizontal_i] == 1:
         print('探索成功')
-        print(depth)
-        # exit()
+        print('深さ: ', depth)
+        print('探索回数: ', count)
+        exit()
 
     maze[vertical_i][horizontal_i] = 2
 
